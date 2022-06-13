@@ -5,6 +5,32 @@ import Form from "./Form";
 import { CardContentFormModel } from "./FormModel";
 import { httpPostContent } from "../../api.http.js";
 import { useSelector } from "react-redux";
+import { useTheme, createUseStyles } from "react-jss";
+
+const useStyles = createUseStyles((theme) => ({
+  bucket: {},
+  bucketHead: {
+    backgroundColor: "#ececec",
+    padding: "4px 16px",
+    borderRadius: 12,
+    marginBottom: 8,
+  },
+  cardContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 8,
+    overflow: "scroll",
+    height: "100%",
+  },
+  formContainer: {
+    width: "100vw",
+    height: "100vh",
+    backgroundColor: "rgba(0,0,0,.4)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+}));
 
 const Bucket = ({ title, children, dashKey, loadDashboard }) => {
   const [show, setShow] = useState(false);
@@ -17,8 +43,12 @@ const Bucket = ({ title, children, dashKey, loadDashboard }) => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    //da sistemare
     const { value } = e.target[CardContentFormModel.text];
+    console.log("DFFFFF");
+    console.log(value);
     if (value !== "") {
+      console.log("Sono nell'if");
       const content = { text: value };
       const isSuccess = await sendContent(content);
       setShow(!isSuccess);
@@ -37,14 +67,18 @@ const Bucket = ({ title, children, dashKey, loadDashboard }) => {
     }
   };
 
+  const classes = useStyles();
+
   return (
-    <div className="bucket">
-      <h2>{title}</h2>
-      <div className="cards">{children}</div>
+    <div className={classes.bucket}>
+      <div className={classes.bucketHead}>
+        <h3>{title}</h3>
+      </div>
+      <div className={classes.cardContainer}>{children}</div>
       <Button onClickHandler={onClickHandler}>Add Card</Button>
       {show && (
         <PopUp>
-          <div className="form-container">
+          <div className={classes.formContainer}>
             <Form onSubmit={onSubmitHandler} onClose={() => setShow(false)}>
               Add Card
             </Form>

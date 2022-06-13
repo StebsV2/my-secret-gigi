@@ -7,7 +7,6 @@ const useStyles = createUseStyles((theme) => ({
   actions: {
     display: "flex",
     justifyContent: "space-between",
-    cursor: "pointer",
     alignItems: "center",
   },
   CommentsWrapper: {
@@ -16,6 +15,7 @@ const useStyles = createUseStyles((theme) => ({
     gap: 4,
     padding: 4,
     borderRadius: 4,
+    cursor: "pointer",
     "&:hover": {
       "& svg> path": {
         fill: "#569fab",
@@ -29,6 +29,7 @@ const useStyles = createUseStyles((theme) => ({
     borderRadius: 4,
     display: "flex",
     alignItems: "center",
+    cursor: "pointer",
     "&:hover": {
       "& svg> path": {
         fill: "#cb4242b3",
@@ -42,6 +43,7 @@ const useStyles = createUseStyles((theme) => ({
     borderRadius: 4,
     display: "flex",
     alignItems: "center",
+    cursor: "pointer",
     "&:hover": {
       "& svg> path": {
         fill: "#569fab",

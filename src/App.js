@@ -53,11 +53,11 @@ function App() {
   return (
     <div>
       {isError && (
-        <div className={classes.errorBanner} role="alert">
+        <div  style={{display: 'none'}} className={classes.errorBanner} role="alert">
           {errorMessage}
         </div>
       )}
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div style={{ display: "none", justifyContent: "center" }}>
         <button
           style={{}}
           onClick={() => {

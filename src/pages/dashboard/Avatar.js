@@ -11,17 +11,17 @@ const useStyles = createUseStyles(() => ({
     borderRadius: 4,
     cursor: "pointer",
   },
-
   avatar: {
     width: 30,
     borderRadius: "100%",
     height: 30,
+    border: "1px solid grey",
   },
 
   addAvatar: {
-    display: "flex",
+    display: "inline-block",
     justifyContent: "center",
-    alignSelf: "center",
+    textAlign: "center",
     backgroundColor: "black",
     color: "white",
     width: 30,
@@ -30,8 +30,16 @@ const useStyles = createUseStyles(() => ({
     margin: 0,
     marginBlock: 0,
     padding: 0,
-    fontSize: 24,
+    fontSize: 19,
+
     transform: "translateX(-20px)",
+
+    //'&:hover': {
+    //transform: 'translateX(-20px)',
+    // animation: 'addAvatar',
+    // animationDuration: '3s',
+    // animationTimingFunction: 'ease',
+    //}
   },
 }));
 export default function Avatar() {

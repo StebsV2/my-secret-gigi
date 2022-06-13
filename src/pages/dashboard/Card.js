@@ -10,17 +10,17 @@ const useStyles = createUseStyles((theme) => ({
     backgroundColor: "#ececec",
     color: "black",
     padding: 14,
-    margin: 12,
-    maxWidth: 400,
-    borderRadius: "12px",
-    border: "1px solid black",
+
+    width: 400,
+    borderRadius: 8,
+    border: "4px transparent black",
   },
   cardDescr: {
-    marginBottom: 12,
+    marginBottom: 8,
     fontSize: 14,
     color: "#424141",
   },
-  imgCard: { marginBottom: 8, borderRadius: 12, maxHeight: 200, maxWidth: 400 },
+  imgCard: { marginBottom: 8, borderRadius: 8, maxHeight: 200, maxWidth: 400 },
 }));
 
 function Card({ descr, title, actions, img, ...rest }) {

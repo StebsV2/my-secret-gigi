@@ -9,21 +9,19 @@ import myImg from "../../ManuelBlurrato.jpg";
 const useStyles = createUseStyles((theme) => ({
   dashboard: {
     display: "flex",
+    overflow: "scroll",
     gap: 16,
     width: "100vw",
     height: "100vh",
-    backgroundColor: theme.colors.primary,
+    //backgroundColor: theme.colors.primary,
     color: theme.colors.text,
-    justifyContent: "space-around",
-    padding: 8,
+    padding: 14,
   },
 }));
 
 const Dashboard = () => {
   const myDashboards = useSelector((state) => state.app.dashboards);
   const dispatch = useDispatch();
-
-  //const [myDashboards, setMyDashboards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const classes = useStyles();
@@ -41,7 +39,7 @@ const Dashboard = () => {
   useEffect(() => {
     console.log(theme);
   }, [theme]);
-
+  console.log();
   return (
     <>
       <div className={classes.dashboard}>

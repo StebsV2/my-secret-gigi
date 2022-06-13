@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 function InputText({ name, id, value, onChange }) {
   return (
-    <input
+    <input  style={{borderRadius: 8, border: '1px solid white'}}
       //ref={this.input}
       type={"text"}
       name={name}
